@@ -1,0 +1,25 @@
+<apex:page >
+    <script type="text/javascript">
+        (function(){
+            beenFocused = true;
+
+            var myApp = angular.module('myApp', ['ngMessages']);
+            myApp.controller('mainCtrl', ['$scope', function($scope) {
+                $scope.accName = 'salesforce.com';
+                $scope.isLocked = false;
+                
+                $scope.doLock = function(event) {
+                    event.preventDefault();
+                    $scope.isLocked = true;
+                    console.log('Lock!!');
+                };
+                
+                $scope.doUnLock = function(event) {
+                    event.preventDefault();
+                    $scope.isLocked = false;
+                    console.log('UnLock!!');
+                };
+            }]);
+        })();
+    </script>
+</apex:page>
